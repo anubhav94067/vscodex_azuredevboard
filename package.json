@@ -10,6 +10,11 @@
     "Other"
   ],
   "main": "./dist/extension.js",
+  "activationEvents": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anubhav94067/vscodex_azuredevboard.git"
+  },
   "contributes": {
     "configuration": {
       "title": "Azure DevOps Time Tracker",
