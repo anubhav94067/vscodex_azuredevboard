@@ -73,44 +73,68 @@
         "command": "azure-devops-time-tracker.closeWorkItem",
         "title": "Close Work Item",
         "icon": "$(check)"
+      },
+      {
+        "command": "azure-devops-time-tracker.showWorkItemsInView",
+        "title": "Show Work Items in VS Code",
+        "icon": "$(preview)"
+      },
+      {
+        "command": "azure-devops-time-tracker.openWorkItemInView",
+        "title": "Open Work Item in VS Code",
+        "icon": "$(file-symlink-file)"
       }
     ],
     "menus": {
-			"commandPalette": [
-				{
-					"command": "azure-devops-time-tracker.configure",
-					"when": "true"
-				}
-			],
-			"view/title": [
-				{
-					"command": "azure-devops-time-tracker.refreshWorkItems",
-					"when": "view == azureDevopsWorkItems",
-					"group": "navigation"
-				}
-			],
-			"view/item/context": [
-				{
-					"command": "azure-devops-time-tracker.openWorkItemInBrowser",
-					"when": "view == azureDevopsWorkItems && viewItem != message",
-					"group": "navigation"
-				},
-				{
-					"command": "azure-devops-time-tracker.startTimer",
-					"when": "view == azureDevopsWorkItems && viewItem == workItem",
-					"group": "inline"
-				},
-				{
-					"command": "azure-devops-time-tracker.stopTimer",
-					"when": "view == azureDevopsWorkItems && viewItem == workItem-active",
-					"group": "inline"
-				},
-				{
-					"command": "azure-devops-time-tracker.closeWorkItem",
-					"when": "view == azureDevopsWorkItems && viewItem == workItem-completed",
-					"group": "inline"
-				}
-			]
+    "commandPalette": [
+      {
+        "command": "azure-devops-time-tracker.configure",
+        "when": "true"
+      },
+      {
+        "command": "azure-devops-time-tracker.showWorkItemsInView",
+        "when": "true"
+      }
+    ],
+    "view/title": [
+      {
+        "command": "azure-devops-time-tracker.refreshWorkItems",
+        "when": "view == azureDevopsWorkItems",
+        "group": "navigation"
+      },
+      {
+        "command": "azure-devops-time-tracker.showWorkItemsInView",
+        "when": "view == azureDevopsWorkItems",
+        "group": "navigation@2"
+      }
+    ],
+    "view/item/context": [
+      {
+        "command": "azure-devops-time-tracker.openWorkItemInBrowser",
+        "when": "view == azureDevopsWorkItems && viewItem != message",
+        "group": "navigation"
+      },
+      {
+        "command": "azure-devops-time-tracker.openWorkItemInView",
+        "when": "view == azureDevopsWorkItems && viewItem != message",
+        "group": "navigation@2"
+      },
+      {
+        "command": "azure-devops-time-tracker.startTimer",
+        "when": "view == azureDevopsWorkItems && viewItem == workItem",
+        "group": "inline"
+      },
+      {
+        "command": "azure-devops-time-tracker.stopTimer",
+        "when": "view == azureDevopsWorkItems && viewItem == workItem-active",
+        "group": "inline"
+      },
+      {
+        "command": "azure-devops-time-tracker.closeWorkItem",
+        "when": "view == azureDevopsWorkItems && viewItem == workItem-completed",
+        "group": "inline"
+      }
+    ]
 		}
   },
   "scripts": {
